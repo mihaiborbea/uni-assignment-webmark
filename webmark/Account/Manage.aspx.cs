@@ -36,6 +36,16 @@ namespace webmark.Account
         protected void Page_Load()
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var user = manager.FindById(User.Identity.GetUserId());
+            var isRole = manager.IsInRole(user.Id, "User");
+            if (user == null)
+            {
+                HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Login.aspx");
+            }
+            //else if (isRole)
+            //{
+            //    HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Default.aspx");
+            //}
 
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
 

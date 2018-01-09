@@ -11,6 +11,15 @@ namespace webmark.Account
 {
     public partial class Register : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var user = manager.FindById(User.Identity.GetUserId());
+            if (user != null)
+            {
+                HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Default.aspx");
+            }
+        }
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();

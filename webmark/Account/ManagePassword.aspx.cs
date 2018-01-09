@@ -25,6 +25,11 @@ namespace webmark.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var user = manager.FindById(User.Identity.GetUserId());
+            if (user == null)
+            {
+                HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Login.aspx");
+            }
 
             if (!IsPostBack)
             {
