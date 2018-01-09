@@ -19,6 +19,11 @@ namespace webmark.Account
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
+                var currentUser = manager.FindByName(user.UserName);
+
+                // Change role to administrator for admin privileges user
+                var roleresult = manager.AddToRole(currentUser.Id, "User");
+
                 signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
