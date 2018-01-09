@@ -66,3 +66,5 @@ D:\Projects\webmark\webmark\obj\Debug\webmark.csprojResolveAssemblyReference.cac
 D:\Projects\webmark\webmark\obj\Debug\webmark.csproj.CoreCompileInputs.cache
 D:\Projects\webmark\webmark\obj\Debug\webmark.dll
 D:\Projects\webmark\webmark\obj\Debug\webmark.pdb
+D:\Projects\webmark\webmark\obj\Debug\webmark.Migrations.date.resources
+D:\Projects\webmark\webmark\obj\Debug\webmark.csproj.GenerateResource.Cache

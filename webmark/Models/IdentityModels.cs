@@ -25,6 +25,12 @@ namespace webmark.Models
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
+
+        public String FirstName { get; set; }
+
+        public String LastName { get; set; }
+
+        public DateTime RegisterDate { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -39,6 +45,7 @@ namespace webmark.Models
             return new ApplicationDbContext();
         }
     }
+
 }
 
 #region Helpers
