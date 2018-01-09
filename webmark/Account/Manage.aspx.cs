@@ -57,7 +57,6 @@ namespace webmark.Account
                 }
                 else
                 {
-                    CreatePassword.Visible = true;
                     ChangePassword.Visible = false;
                 }
 
