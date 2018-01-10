@@ -22,6 +22,11 @@ namespace webmark
             bookmarkId = Request.QueryString["id"];
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = manager.FindById(User.Identity.GetUserId());
+            var isAdmin = manager.IsInRole(user.Id, "Administrator");
+            if (user == null)
+            {
+                DeleteButton.Visible = false;
+            }
             if (user == null)
             {
                 HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Account/Login.aspx");

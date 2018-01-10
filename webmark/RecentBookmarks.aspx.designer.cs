@@ -10,7 +10,7 @@
 namespace webmark {
     
     
-    public partial class _Default {
+    public partial class RecentBookmarks {
         
         /// <summary>
         /// SearchTerm control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="webmark._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RecentBookmarks.aspx.cs" Inherits="webmark.RecentBookmarks" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-    <div class="row" style="maring-left:40px">
+    <div class="row">
         <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id" DataSourceID="SqlDataSource1" GroupItemCount="3">
             <AlternatingItemTemplate>
                 <td runat="server" style="">
