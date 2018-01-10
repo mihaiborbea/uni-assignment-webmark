@@ -12,7 +12,8 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <a href="http://www.asp.net" class="btn btn-primary btn-lg">Add a webmark</a>
+                <a href="~/CreateBookmark" runat="server" class="btn btn-primary btn-lg">Add a webmark</a>
+
             </div>
         </div>
     </div>
