@@ -22,14 +22,9 @@ namespace webmark
             bookmarkId = Request.QueryString["id"];
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = manager.FindById(User.Identity.GetUserId());
-            var isWrongRole = manager.IsInRole(user.Id, "User");
             if (user == null)
             {
                 HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Account/Login.aspx");
-            }
-            if (isWrongRole)
-            {
-                DeleteButton.Visible = false;
             }
             if (Request.QueryString["voted"] != null)
             {

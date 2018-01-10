@@ -10,7 +10,7 @@
 namespace webmark.Account {
     
     
-    public partial class Users {
+    public partial class ManageBookmarks {
         
         /// <summary>
         /// ListView1 control.
