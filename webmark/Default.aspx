@@ -2,10 +2,19 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div class="jumbotron d-inline-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <form>
+                    <input type="text" class="input-large search-query" placeholder="Find a webmark" />
+                    <label for="mySubmit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-search"></i>&nbsp;Find</label>
+                    <input id="mySubmit" type="submit" value="Go" class="hidden" />
+                </form>
+            </div>
+            <div class="col-md-4">
+                <a href="http://www.asp.net" class="btn btn-primary btn-lg">Add a webmark</a>
+            </div>
+        </div>
     </div>
 
     <div class="row">

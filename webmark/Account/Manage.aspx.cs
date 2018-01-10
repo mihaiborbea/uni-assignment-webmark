@@ -37,16 +37,13 @@ namespace webmark.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = manager.FindById(User.Identity.GetUserId());
-            var isRole = manager.IsInRole(user.Id, "User");
+            var isAdmin = manager.IsInRole(user.Id, "Administrator");
             if (user == null)
             {
                 HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Login.aspx");
             }
-            //else if (isRole)
-            //{
-            //    HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Default.aspx");
-            //}
-
+            UserManager.Visible = isAdmin;
+            UserManagerLink.Visible = isAdmin;
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
 
             // Enable this after setting up two-factor authentientication
