@@ -13,8 +13,24 @@
                 <asp:Label ID="wTitle" runat="server" Text='<%# Eval("Title") %>' />&nbsp;
             </asp:HyperLink>
             <br />
-            Email:
+            Description:
             <asp:Label ID="Description" runat="server" Text='<%# Eval("Description") %>' />
+            <br />
+            Url:
+            <a href='<%# Eval("URL")  %>' runat="server">
+                <asp:Label ID="URL" runat="server" Text='<%# Eval("URL") %>' />&nbsp;
+            </a>
+            <br />
+            Votes:
+            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Votes") %>' />
+            <br />
+            Creation Date:
+            <asp:Label ID="Label3" runat="server" Text='<%# Eval("CreationDate") %>' />
+            <br />
+            Tags:
+            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Tag1") %>' />
+            <asp:Label ID="Label4" runat="server" Text='<%# Eval("Tag2") %>' />
+            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Tag3") %>' />
             <asp:Button ID="DeleteBookmark" runat="server" Text="Delete" CssClass="btn btn-xs btn-danger" CommandArgument='<%# Eval("Id") %>' OnClick="DeleteBookmark_Clicked" /><br />
             <br />
             </span>

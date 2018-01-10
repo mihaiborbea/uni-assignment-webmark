@@ -44,6 +44,8 @@ namespace webmark.Account
             }
             UserManager.Visible = isAdmin;
             UserManagerLink.Visible = isAdmin;
+            BookmarkManager.Visible = isAdmin;
+            BookmarkManagerLink.Visible = isAdmin;
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
 
             // Enable this after setting up two-factor authentientication

@@ -23,6 +23,10 @@
                     <dd>
                         <asp:HyperLink ID="UserManagerLink" Visible="false" NavigateUrl="/Account/Users" Text="[Manage]" runat="server" />
                     </dd>
+                    <dt id="BookmarkManager" runat="server" visible='false'>Manage Bookmark:</dt>
+                    <dd>
+                        <asp:HyperLink ID="BookmarkManagerLink" Visible="false" NavigateUrl="/Account/ManageBookmarks" Text="[Manage Bookmarks]" runat="server" />
+                    </dd>
                 </dl>
             </div>
         </div>
