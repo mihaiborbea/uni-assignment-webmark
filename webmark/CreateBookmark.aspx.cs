@@ -12,7 +12,7 @@ namespace webmark
 {
     public partial class CreateBookmark : System.Web.UI.Page
     {
-        private SqlConnection con = new SqlConnection(@"Data Source = (LocalDb)\MSSQLLocalDB; AttachDbFilename=D:\Projects\webmark\webmark\App_Data\aspnet-webmark-20180109014233.mdf;Initial Catalog = aspnet-webmark-20180109014233; Integrated Security = True");
+        private SqlConnection con = new SqlConnection(@"Data Source = (LocalDb)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\WebmarkDb.mdf;Initial Catalog=WebmarkDb; Integrated Security = True");
         protected void Page_Load(object sender, EventArgs e)
         {
             con.Close();

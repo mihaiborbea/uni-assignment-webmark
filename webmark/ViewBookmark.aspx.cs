@@ -12,7 +12,7 @@ namespace webmark
 {
     public partial class ViewBookmark : System.Web.UI.Page
     {
-        private SqlConnection con = new SqlConnection(@"Data Source = (LocalDb)\MSSQLLocalDB; AttachDbFilename=D:\Projects\webmark\webmark\App_Data\aspnet-webmark-20180109014233.mdf;Initial Catalog = aspnet-webmark-20180109014233; Integrated Security = True");
+        private SqlConnection con = new SqlConnection(@"Data Source = (LocalDb)\MSSQLLocalDB; AttachDbFilename=|DataDirectory|\WebmarkDb.mdf;Initial Catalog=WebmarkDb; Integrated Security = True");
         private string bookmarkId;
         private static bool upEnabled = true;
         private static bool downEnabled = true;
@@ -22,14 +22,14 @@ namespace webmark
             bookmarkId = Request.QueryString["id"];
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = manager.FindById(User.Identity.GetUserId());
-            var isAdmin = manager.IsInRole(user.Id, "Administrator");
-            if (user == null)
-            {
-                DeleteButton.Visible = false;
-            }
             if (user == null)
             {
                 HttpContext.Current.Response.Redirect(url: $"{Request.ApplicationPath}Account/Login.aspx");
+            }
+            var isAdmin = manager.IsInRole(user.Id, "Administrator");
+            if (isAdmin == false)
+            {
+                DeleteButton.Visible = false;
             }
             if (Request.QueryString["voted"] != null)
             {
